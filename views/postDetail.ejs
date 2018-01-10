@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+
+    <div class="ui main container segment">
+        <div class="ui huge header">
+            <%= post.title %>
+        </div>
+        <div class="ui rounded image">
+            <img src="<%= post.photo %>">
+        </div>
+        <div class="meta">
+            <span><%= post.createdAt %></span>
+        </div>
+        <div class="description">
+          <p><%- post.body%></p>
+        </div>
+        <div class="extra">
+            <div class="inline field"> 
+             <a href="/posts/<%= post.id %>/edit" class="ui blue tiny button">Edit</a>
+             <form action="/posts/<%= post.id%>/?_method=DELETE" method="POST">
+                <button class="ui red tiny button">Delete</button>
+             </form>
+            </div>
+         
+    </div>
+
+<% include partials/footer.ejs %>

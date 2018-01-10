@@ -1,5 +1,24 @@
 <% include partials/header.ejs %>
 
-    <h1>EDIT</h1>
+     <div class="ui main text container segment">
+        <div class="ui huge header">
+            <h1>Edit Post</h1>
+        </div>
+        <form class="ui form" action="/posts/<%= post.id%>?_method=PUT" method="POST">
+            <div class="field">
+                <label>Title:</label>
+                <input type="text" name="post[title]" value="<%= post.title %>"></input>
+            </div>
+             <div class="field">
+                <label>Photo:</label>
+                <input type="text" name="post[photo]" value="<%= post.photo %>"></input>
+            </div>
+             <div class="field">
+               <label>Post content:</label>
+               <textarea name="post[body]"><%= post.body %></textarea>
+            </div>
+            <button class="ui purple basic big button" action type="submit">Update</button>
+        </form>
+    </div>
 
 <% include partials/footer.ejs %>
