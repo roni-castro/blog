@@ -1,6 +1,6 @@
 <% include partials/header.ejs %>
 
-    <div class="ui main container segment">
+     <div class="ui main text container segment">
         <div class="ui huge header">
             <%= post.title %>
         </div>
@@ -14,13 +14,12 @@
           <p><%- post.body%></p>
         </div>
         <div class="extra">
-            <div class="inline field"> 
-             <a href="/posts/<%= post.id %>/edit" class="ui blue tiny button">Edit</a>
-             <form action="/posts/<%= post.id%>/?_method=DELETE" method="POST">
+            <a href="/posts/<%= post.id %>/edit" class="ui blue tiny button">Edit</a>
+            <form id="deleteForm" action="/posts/<%= post.id%>/?_method=DELETE" method="POST">
                 <button class="ui red tiny button">Delete</button>
-             </form>
-            </div>
-         
+            </form>
+            
+        </div>
     </div>
 
 <% include partials/footer.ejs %>

@@ -13,7 +13,7 @@
                                 <span><%= post.createdAt %></span>
                             </div>
                             <div class="description">
-                                <% var bodyStr = post.body.length > 100 ?  post.body.substring(0, 100) + "..." : post.body %>
+                                <% var bodyStr = post.body!= null && post.body.length > 100 ?  post.body.substring(0, 100) + "..." : post.body %>
                               <p><%- bodyStr%></p>
                             </div>
                             <div class="extra">
