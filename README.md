@@ -1,3 +1,3 @@
-It's required the following command tobe set in the terminal to associate the mongodb path to the application. In the example the database name is blog_db:
+It's required the following command t create an environment variable which will store the database path. In the example the database name is blog_db. If it's not set in the terminal than the url "mongodb://localhost/blog_db" will be used by default to store the database
 
 export DATABASE_URL=mongodb://localhost/blog_db
