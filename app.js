@@ -5,7 +5,7 @@ var express             = require("express"),
     methodOverride      = require("method-override"),
     app                 = express();
     
-mongoose.connect("mongodb://localhost/blog_db", {useMongoClient: true}, function(err){
+mongoose.connect(process.env.DATABASE_URL, {useMongoClient: true}, function(err){
     if (err){
         throw err;
     } else{
