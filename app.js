@@ -5,13 +5,13 @@ var express             = require("express"),
     methodOverride      = require("method-override"),
     app                 = express();
     
-mongoose.connect("mongodb://localhost/blog_db", {useMongoClient: true});
-var db = mongoose.connection;
-// When successfully connected
-db.on('connected', function() {
-    console.log('Mongo DB connection open for DB');
+mongoose.connect("mongodb://localhost/blog_db", {useMongoClient: true}, function(err){
+    if (err){
+        throw err;
+    } else{
+        console.log('Mongo DB is connected');
+    }
 });
-
 
 app.set("view engine", "ejs");
 app.use(express.static("public"));
